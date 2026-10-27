@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0c0c0b">
+<link rel="icon" href="img/mark-paper.png">
+<title>Dutch Cuts Premier Barber</title>
+<meta name="description" content="Dutch Cuts, a barbershop at 2816 Bee Rd in Savannah, GA. Three barbers, fades, beards, kids and house calls, booked on Booksy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Graduate&display=swap">
+<style>
+/* Layout: varsity locker room. Black + bone bands, gold from the "Premier Barber" lockup, hexagons from the shop's ceiling lights,
+   condensed athletic headlines, a team roster for the barbers, polaroids for the work. Deliberately one look (no theme switch). */
+:root {
+  color-scheme: dark;
+  --black: #0c0c0b;
+  --coal: #161614;
+  --coal-2: #1f1e1b;
+  --bone: #f1ede4;
+  --bone-2: #e4ddcf;
+  --gold: #c9a24a;
+  --gold-2: #e2c27a;
+  --mute: #a19b90;
+  --mute-dk: #5f5a52;
+  --line: rgba(241,237,228,.14);
+  --line-lt: rgba(12,12,11,.14);
+  --d: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --v: "Graduate", "Rockwell", "Courier New", serif;
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --max: 1280px;
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+  --sec: clamp(76px, 10vw, 144px);
+  --hex: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: var(--black); color: var(--bone); font-family: var(--d); font-size: 16px; line-height: 1.55; font-variation-settings: "wdth" 100; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4 { margin: 0; font-weight: 800; font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; letter-spacing: -0.005em; line-height: .9; text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: calc(var(--max) + 64px); margin: 0 auto; padding-left: var(--gl); padding-right: var(--gr); }
+@media (min-width: 900px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.sec { padding-block: var(--sec); }
+.light { background: var(--bone); color: var(--black); }
+.coal { background: var(--coal); }
+.gold { color: var(--gold); }
+.light .gold { color: #8f6c1e; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+.eyebrow::before { content: ""; width: 10px; height: 10px; background: var(--gold); clip-path: var(--hex); }
+.light .eyebrow { color: var(--mute-dk); }
+.h1 { font-size: clamp(64px, 12.4vw, 196px); }
+.h2 { font-size: clamp(48px, 7.4vw, 112px); }
+.h3 { font-size: clamp(30px, 3.2vw, 44px); }
+.lede { color: var(--mute); max-width: 44ch; font-size: 16.5px; }
+.light .lede { color: var(--mute-dk); }
+.varsity { font-family: var(--v); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 50px; padding: 0 22px; border: 1.5px solid var(--gold); background: var(--gold); color: var(--black); font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .15s var(--ease); }
+.btn:hover { background: var(--gold-2); border-color: var(--gold-2); }
+.btn:active { transform: scale(.97); }
+.btn .ar { width: 14px; height: 14px; transition: transform .25s var(--ease); }
+.btn:hover .ar { transform: translateX(4px); }
+.btn.line { background: transparent; color: var(--bone); border-color: var(--line); }
+.btn.line:hover { border-color: var(--bone); }
+.light .btn.line { color: var(--black); border-color: var(--line-lt); }
+.light .btn.line:hover { border-color: var(--black); }
+.btn.ink { background: var(--black); color: var(--bone); border-color: var(--black); }
+.btn.ink:hover { background: #2a2925; }
+.btn.sm { min-height: 42px; padding: 0 16px; font-size: 12.5px; }
+
+/* ---------- NAV ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--black); z-index: 60; }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(12,12,11,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 68px; }
+.nav .logo img { height: 24px; width: auto; }
+.nav ul { display: none; list-style: none; gap: 28px; margin: 0; padding: 0; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.nav ul a { text-decoration: none; color: var(--mute); transition: color .2s; }
+.nav ul a:hover { color: var(--bone); }
+.nav .right { display: flex; align-items: center; gap: 10px; }
+.nav .phone { display: none; font-size: 13px; letter-spacing: .08em; text-decoration: none; color: var(--mute); font-variant-numeric: tabular-nums; }
+.burger { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); background: none; cursor: pointer; }
+@media (min-width: 1000px) { .nav ul { display: flex; } .nav .phone { display: inline; } .burger { display: none; } .nav .logo img { height: 28px; } }
+
+/* ---------- HERO ---------- */
+.hero { padding-top: clamp(28px, 4vw, 64px); }
+.hero-main { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 1000px) { .hero-main { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 4vw, 64px); } }
+.hero-copy { order: 2; }
+@media (min-width: 1000px) { .hero-copy { order: 1; } }
+.hero .kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.hero .kicker .chip { font-family: var(--v); font-size: 13px; color: var(--black); background: var(--gold); padding: 5px 10px 4px; letter-spacing: .04em; }
+.hero .kicker .rate { font-size: 13px; color: var(--mute); }
+.hero .kicker .rate b { color: var(--bone); font-weight: 600; }
+.hero h1 { margin-top: 22px; font-size: clamp(60px, 7.6vw, 124px); line-height: .88; }
+.hero h1 .row { display: block; overflow: hidden; padding-bottom: .02em; }
+.hero h1 .row > span { display: inline-block; animation: up 1s var(--ease) both; }
+.hero h1 .row:nth-child(2) > span { animation-delay: .08s; }
+.hero h1 .row:nth-child(3) > span { animation-delay: .16s; }
+@keyframes up { from { transform: translateY(105%); } to { transform: none; } }
+.hero h1 .stroke { color: transparent; -webkit-text-stroke: 1.5px var(--bone); }
+.hero .sub { margin-top: 22px; color: var(--mute); max-width: 38ch; font-size: 17px; animation: rise .9s var(--ease) .3s both; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; animation: rise .9s var(--ease) .38s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.hero-photo { order: 1; position: relative; margin: 0; aspect-ratio: 7 / 5; max-height: 640px; overflow: hidden; background: var(--coal); animation: rise 1s var(--ease) .1s both; }
+@media (min-width: 1000px) { .hero-photo { order: 2; } }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.hero-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(241,237,228,.08); pointer-events: none; }
+.hero-photo figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(12,12,11,.78); backdrop-filter: blur(8px); padding: 7px 11px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--bone); }
+.hero-photo .corner { position: absolute; top: 0; right: 0; width: 64px; height: 64px; background: linear-gradient(225deg, var(--gold) 50%, transparent 50%); }
+.today { margin-top: clamp(36px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; }
+@media (min-width: 900px) { .today { grid-template-columns: 200px repeat(3, 1fr); } }
+.today .th { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 16px 0; }
+.today .th b { font-family: var(--v); font-weight: 400; font-size: 16px; letter-spacing: .04em; }
+.today .th span { font-size: 12px; color: var(--mute); letter-spacing: .12em; text-transform: uppercase; }
+.today a { display: grid; grid-template-columns: 46px 1fr auto; gap: 12px; align-items: center; padding: 14px 0; text-decoration: none; border-top: 1px solid var(--line); transition: background .2s; }
+@media (min-width: 900px) { .today a { border-top: 0; border-left: 1px solid var(--line); padding: 14px 18px; } }
+.today a:hover { background: rgba(201,162,74,.08); }
+.today img { width: 46px; height: 46px; object-fit: cover; object-position: 50% 20%; }
+.today strong { display: block; font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 22px; line-height: 1; }
+.today .st { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--mute); margin-top: 4px; }
+.today .st i { width: 7px; height: 7px; border-radius: 50%; background: var(--mute-dk); flex: none; }
+.today .st.open { color: var(--bone); }
+.today .st.open i { background: #6fcf7f; box-shadow: 0 0 0 3px rgba(111,207,127,.2); }
+.today .go { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 6px; }
+.hero + .ticker { margin-top: 0; }
+.hero { padding-bottom: clamp(36px, 5vw, 56px); }
+
+/* ---------- TICKER ---------- */
+.ticker { background: var(--gold); color: var(--black); overflow: hidden; border-block: 1px solid #a8862f; }
+.ticker .track { display: flex; width: max-content; animation: tick 34s linear infinite; padding-block: 14px; }
+.ticker span { display: inline-flex; align-items: center; gap: 26px; padding-right: 26px; font-weight: 800; font-variation-settings: "wdth" 62; font-size: clamp(22px, 2.6vw, 34px); text-transform: uppercase; white-space: nowrap; letter-spacing: .01em; }
+.ticker i { width: 12px; height: 12px; background: var(--black); clip-path: var(--hex); }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ---------- ROSTER ---------- */
+.shead { display: grid; gap: 24px; }
+@media (min-width: 900px) { .shead { grid-template-columns: 1.4fr 1fr; align-items: end; gap: 64px; } }
+.shead h2 { margin-top: 18px; }
+.shead .side { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.roster { display: grid; gap: 16px; margin-top: clamp(40px, 6vw, 72px); }
+@media (min-width: 760px) { .roster { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+.card { position: relative; background: var(--coal); border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; transition: transform .4s var(--ease), border-color .3s; }
+.card:hover { transform: translateY(-6px); border-color: rgba(201,162,74,.6); }
+.card .pic { position: relative; aspect-ratio: 4/4.4; overflow: hidden; background: var(--coal-2); }
+.card .pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transition: transform .8s var(--ease); }
+.card:hover .pic img { transform: scale(1.04); }
+.card .pic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--coal) 0%, transparent 45%); }
+.card .no { position: absolute; z-index: 1; top: 12px; right: 14px; font-family: var(--v); font-size: 58px; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px rgba(241,237,228,.75); }
+.card .pos { position: absolute; z-index: 1; top: 14px; left: 14px; background: var(--gold); color: var(--black); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 9px; }
+.card .body { position: relative; z-index: 1; padding: 0 20px 20px; margin-top: -54px; display: flex; flex-direction: column; flex: 1; }
+.card h3 { font-size: 46px; }
+.card .aka { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+.card p { color: var(--mute); font-size: 14.5px; margin-top: 12px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stats div { padding: 12px 0; text-align: center; }
+.stats div + div { border-left: 1px solid var(--line); }
+.stats strong { display: block; font-family: var(--v); font-weight: 400; font-size: 24px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stats span { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.status { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--mute); }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--mute-dk); flex: none; }
+.status.open i { background: #6fcf7f; box-shadow: 0 0 0 4px rgba(111,207,127,.18); }
+.status.open { color: var(--bone); }
+.card .btn { margin-top: 18px; }
+
+/* ---------- PRICES INSIDE EACH CARD ---------- */
+.pdrop { margin-top: 18px; border: 1px solid var(--line); }
+.ptog { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; background: none; border: 0; cursor: pointer; text-align: left; transition: background .2s; }
+.ptog:hover { background: var(--coal-2); }
+.ptog b { display: block; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.ptog small { display: block; font-size: 12.5px; color: var(--mute); margin-top: 3px; }
+.ptog .chev { flex: none; color: var(--gold); transition: transform .35s var(--ease); }
+.pdrop.open .chev { transform: rotate(180deg); }
+.pbody { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.pdrop.open .pbody { grid-template-rows: 1fr; }
+.pbody > div { overflow: hidden; min-height: 0; padding: 0 16px; }
+.pdrop.open .pbody > div { padding-bottom: 14px; }
+.plist { border-top: 1px solid var(--line); }
+.prow { display: grid; grid-template-columns: 1fr auto; gap: 2px 14px; padding: 10px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.prow b { font-weight: 600; font-size: 15px; }
+.prow small { grid-column: 1; font-size: 12.5px; color: var(--mute); }
+.prow .amt { grid-row: 1 / span 2; grid-column: 2; text-align: right; font-family: var(--v); font-size: 20px; line-height: 1.1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.prow .amt em { display: block; font-family: var(--d); font-style: normal; font-size: 11.5px; color: var(--mute); }
+.prow .amt .fr { font-family: var(--d); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin-right: 3px; }
+.card .policy { font-size: 12.5px; color: var(--mute); margin-top: 12px; }
+.card .btn { margin-top: auto; }
+.card .cta { margin-top: 18px; display: flex; }
+
+.wlink { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin-top: 10px; padding: 10px; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, background .2s; }
+.wlink:hover { border-color: var(--gold); background: var(--coal-2); }
+.wlink .th { display: flex; }
+.wlink .th img { width: 46px; height: 56px; object-fit: cover; border: 2px solid var(--coal); margin-left: -10px; transform: rotate(var(--r)); box-shadow: 0 4px 10px rgba(0,0,0,.4); }
+.wlink .th img:first-child { margin-left: 0; }
+.wlink b { display: block; font-weight: 600; font-size: 14.5px; }
+.wlink span.n { font-size: 12.5px; color: var(--mute); }
+.wlink .go { color: var(--gold); }
+.card .cta .btn { width: 100%; }
+
+/* ---------- POLAROIDS ---------- */
+.board { position: relative; margin-top: clamp(40px, 6vw, 64px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 14px; }
+@media (min-width: 700px) { .board { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .board { grid-template-columns: repeat(4, 1fr); gap: 34px 26px; } }
+.pol { margin: 0; background: #f7f4ec; color: var(--black); padding: 9px 9px 0; box-shadow: 0 22px 40px -22px rgba(0,0,0,.8), 0 2px 6px rgba(0,0,0,.25); transform: rotate(var(--r, 0deg)) translateY(var(--y, 0)); transition: transform .5s var(--ease), box-shadow .3s; cursor: zoom-in; border: 0; text-align: left; width: 100%; }
+.pol:hover, .pol:focus-visible { transform: rotate(0deg) translateY(-8px) scale(1.03); z-index: 2; position: relative; }
+.pol .ph { aspect-ratio: 4/5; overflow: hidden; background: var(--bone-2); }
+.pol img { width: 100%; height: 100%; object-fit: cover; }
+.pol figcaption, .pol .cap { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; padding: 10px 2px 12px; font-size: 13px; }
+.pol .cap b { font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 17px; line-height: 1.05; }
+.pol .cap span { font-family: var(--v); font-size: 11px; color: var(--mute-dk); white-space: nowrap; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; }
+.filters button { min-height: 40px; padding: 0 14px; border: 1px solid var(--line); background: transparent; color: var(--mute); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.filters button:hover { color: var(--bone); border-color: var(--bone); }
+.filters button[aria-pressed="true"] { background: var(--bone); color: var(--black); border-color: var(--bone); }
+.pol[hidden] { display: none !important; }
+.board.short .pol.extra { display: none; }
+.more { display: flex; justify-content: center; margin-top: 44px; }
+
+/* ---------- THE SHOP ---------- */
+.shop { display: grid; gap: 40px; }
+@media (min-width: 1000px) { .shop { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; } }
+.shop-pics { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+.shop-pics .a { grid-row: span 2; aspect-ratio: auto; min-height: 100%; }
+.shop-pics div { overflow: hidden; background: var(--coal-2); aspect-ratio: 4/3.4; }
+.shop-pics img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.shop-pics div:hover img { transform: scale(1.04); }
+.principles { margin-top: 30px; border-top: 1px solid var(--line); }
+.pr { display: grid; grid-template-columns: 48px 1fr; gap: 6px 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 700px) { .pr { grid-template-columns: 56px 1fr 1.3fr; } }
+.pr .k { font-family: var(--v); color: var(--gold); font-size: 15px; }
+.pr h3 { font-size: 26px; }
+.pr p { color: var(--mute); font-size: 14.5px; grid-column: 2; }
+@media (min-width: 700px) { .pr p { grid-column: 3; } }
+
+/* ---------- REVIEWS ---------- */
+.reviews { display: grid; gap: 14px; margin-top: clamp(40px, 6vw, 64px); }
+@media (min-width: 760px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
+.rcard { background: var(--coal); border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; gap: 18px; min-height: 300px; }
+.rcard .stars { color: var(--gold); letter-spacing: 3px; font-size: 14px; }
+.rcard blockquote { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; }
+.rcard .who { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+.rcard .who img { width: 44px; height: 44px; object-fit: cover; object-position: 50% 20%; }
+.rcard .who b { display: block; font-weight: 600; font-size: 14.5px; }
+.rcard .who span { font-size: 12.5px; color: var(--mute); }
+.rbig { display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: baseline; }
+.rbig strong { font-family: var(--v); font-weight: 400; font-size: clamp(64px, 9vw, 140px); line-height: .9; color: var(--gold); }
+
+/* ---------- VISIT + FAQ ---------- */
+.visit { display: grid; gap: 48px; }
+@media (min-width: 1000px) { .visit { grid-template-columns: 1fr 1fr; gap: 72px; } }
+.addr { font-size: clamp(30px, 3.4vw, 46px); margin-top: 18px; }
+.vrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.copyline { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 18px; font-size: 14.5px; color: var(--mute-dk); }
+.copyline b { color: var(--black); font-weight: 600; font-variant-numeric: tabular-nums; }
+.hours { margin-top: 34px; font-size: 14px; border-top: 2px solid var(--black); }
+.hours .hr { display: grid; grid-template-columns: 64px repeat(3, 1fr); gap: 6px; padding: 11px 4px; border-bottom: 1px solid var(--line-lt); font-variant-numeric: tabular-nums; }
+.hours .hr.head { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute-dk); }
+.hours .hr.today { background: var(--black); color: var(--bone); }
+.hours .hr.today .off { color: var(--mute); }
+.hours .off { color: #b1aa9d; }
+.faq { border-top: 2px solid var(--black); margin-top: 22px; }
+.q { border-bottom: 1px solid var(--line-lt); }
+.q button { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 20px 0; background: none; border: 0; text-align: left; cursor: pointer; font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: clamp(20px, 2vw, 25px); line-height: 1.05; }
+.q .pm { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line-lt); transition: background .3s, color .3s, transform .4s var(--ease); }
+.q.open .pm { background: var(--black); color: var(--bone); }
+.q .pm svg { transition: transform .4s var(--ease); }
+.q.open .pm svg { transform: rotate(45deg); }
+.q .a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.q.open .a { grid-template-rows: 1fr; }
+.q .a > div { overflow: hidden; min-height: 0; }
+.q .a p { padding: 0 50px 22px 0; color: var(--mute-dk); }
+
+/* ---------- FINAL CTA ---------- */
+.final { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(110px, 14vw, 200px); text-align: center; }
+.final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.5); z-index: -2; }
+.final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at center, rgba(12,12,11,.2), rgba(12,12,11,.85) 75%); }
+.final .mark { width: 54px; margin: 0 auto 26px; }
+.final p { color: var(--mute); margin: 18px auto 0; max-width: 40ch; }
+.final .btn { margin-top: 30px; }
+
+/* ---------- FOOTER ---------- */
+footer { background: var(--black); border-top: 1px solid var(--line); padding-top: clamp(56px, 7vw, 90px); overflow: hidden; }
+.fcols { display: grid; gap: 34px; grid-template-columns: 1fr 1fr; }
+@media (min-width: 900px) { .fcols { grid-template-columns: 1.6fr 1fr 1.2fr 1fr; } }
+.fcols .brand { grid-column: 1 / -1; }
+@media (min-width: 900px) { .fcols .brand { grid-column: auto; } }
+.fcols .brand img { height: 26px; width: auto; }
+.fcols .brand p { color: var(--mute); font-size: 14px; margin-top: 14px; max-width: 30ch; }
+.fcols h4 { font-size: 13px; letter-spacing: .16em; color: var(--mute); font-weight: 600; font-variation-settings: "wdth" 100; }
+.fcols ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 4px; font-size: 15px; }
+.fcols a { text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+.fcols a:hover { color: var(--gold); }
+.fcols address { font-style: normal; font-size: 15px; margin-top: 14px; line-height: 1.7; }
+.giant { font-family: var(--v); font-size: clamp(52px, 13.4vw, 190px); line-height: .82; text-align: center; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(201,162,74,.38); margin-top: clamp(40px, 6vw, 72px); user-select: none; }
+.legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px)); margin-top: 24px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--mute); }
+
+/* ---------- DIALOGS ---------- */
+dialog { border: 0; padding: 0; background: var(--coal); color: var(--bone); }
+dialog::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(4px); }
+#chooser { width: min(580px, calc(100% - 24px)); border: 1px solid var(--line); }
+#chooser[open] { animation: pop .35s var(--ease); }
+#chooser .in { padding: 26px; }
+.dtop { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.dtop h3 { font-size: 40px; }
+.dtop p { color: var(--mute); font-size: 14px; margin-top: 6px; }
+.x { width: 44px; height: 44px; flex: none; display: grid; place-items: center; background: none; border: 1px solid var(--line); cursor: pointer; }
+.pick { display: grid; gap: 8px; margin-top: 22px; }
+.pick a { display: grid; grid-template-columns: 58px 1fr auto; gap: 14px; align-items: center; padding: 10px 14px 10px 10px; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, background .2s; }
+.pick a:hover { border-color: var(--gold); background: var(--coal-2); }
+.pick img { width: 58px; height: 58px; object-fit: cover; object-position: 50% 20%; }
+.pick strong { display: block; font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 24px; line-height: 1; }
+.pick span { font-size: 12.5px; color: var(--mute); }
+.pick .p { text-align: right; font-size: 12px; color: var(--mute); }
+.pick .p b { display: block; font-family: var(--v); font-weight: 400; font-size: 19px; color: var(--bone); }
+#mnav { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; background: var(--black); }
+#mnav[open] { animation: fade .3s var(--ease); }
+#mnav .in { display: flex; flex-direction: column; min-height: 100%; padding: calc(16px + env(safe-area-inset-top, 0px)) var(--gr) calc(24px + env(safe-area-inset-bottom, 0px)) var(--gl); }
+#mnav .dtop img { height: 22px; width: auto; margin-top: 10px; }
+#mnav ul { list-style: none; margin: 36px 0 0; padding: 0; }
+#mnav li a { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 46px; line-height: 1; }
+#mnav .foot { margin-top: auto; padding-top: 28px; display: grid; gap: 14px; color: var(--mute); font-size: 14px; }
+#lb { width: min(560px, calc(100% - 24px)); background: #f7f4ec; color: var(--black); padding: 10px 10px 0; }
+#lb[open] { animation: pop .35s var(--ease); }
+#lb img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+#lb .cap { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 4px 14px; }
+#lb .cap b { font-weight: 800; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 22px; line-height: 1.05; }
+#lb .x { border-color: var(--line-lt); }
+@keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+  .ticker .track { animation: none; }
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ar" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="ne" viewBox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="plus" viewBox="0 0 16 16"><path d="M1 8h14M8 1v14" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="xx" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Primary">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Dutch Cuts home"><img src="img/lockup-h-paper.png" alt="Dutch Cuts" width="128" height="24"></a>
+    <ul>
+      <li><a href="#barbers">Barbers & prices</a></li>
+      <li><a href="#work">The work</a></li>
+      <li><a href="#shop">The shop</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="right">
+      <a class="phone" href="tel:+19125086202">912-508-6202</a>
+      <button class="btn sm" type="button" data-book>Book</button>
+      <button class="burger" type="button" id="menu-open" aria-label="Open menu" aria-controls="mnav"><svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 6h18M0 11h18" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-main">
+      <div class="hero-copy">
+        <div class="kicker"><span class="chip">Est. 2022</span><span class="rate"><b>★ 4.99</b> · 564 Booksy reviews</span></div>
+        <h1><span class="row"><span>Clean fades.</span></span><span class="row"><span>Sharp lines.</span></span><span class="row"><span class="gold">Bee Road.</span></span></h1>
+        <p class="sub">Three barbers in Savannah, each with his own chair and his own book. Cuts, beards, kids and house calls.</p>
+        <div class="ctas">
+          <button class="btn" type="button" data-book>Book your barber <svg class="ar"><use href="#ar"/></svg></button>
+          <a class="btn line" href="#barbers">Barbers and prices</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/lounge-hero.jpg" alt="The Dutch Cuts lounge: pool table, waiting chairs and the game on the TVs under the Dutchcuts sign" width="1400" height="1000" fetchpriority="high">
+        <span class="corner" aria-hidden="true"></span>
+        <figcaption>The lounge · 2816 Bee Rd</figcaption>
+      </figure>
+    </div>
+    <div class="today" aria-label="Who's working today">
+      <div class="th"><b>In the shop today</b><span id="today-day">Today</span></div>
+      <div id="today-list" style="display:contents"></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="tick"></div></div>
+
+<!-- ROSTER -->
+<section class="sec" id="barbers">
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="eyebrow">The roster</span><h2 class="h2">Barbers <span class="gold">&amp; prices.</span></h2></div>
+      <div class="side"><p class="lede">Each barber runs his own book, so each card has his own prices, hours and policies. The green dot means he's working right now.</p></div>
+    </div>
+    <div class="roster" id="roster"></div>
+  </div>
+</section>
+
+
+
+<!-- WORK -->
+<section class="sec coal" id="work">
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="eyebrow">The work</span><h2 class="h2">Recent <span class="gold">work.</span></h2></div>
+      <div class="side"><p class="lede">Twenty cuts, each photographed by the barber who did it. Tap one to see it bigger, or filter by barber.</p></div>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter cuts by barber"></div>
+    <div class="board short" id="board"></div>
+    <div class="more"><button class="btn line" type="button" id="more">See all 20 cuts</button></div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="sec" id="shop">
+  <div class="wrap shop">
+    <div>
+      <span class="eyebrow">The shop</span>
+      <h2 class="h2" style="margin-top:18px">Worth the <span class="gold">wait.</span></h2>
+      <p class="lede" style="margin-top:18px">Dutch opened the shop in 2022 after cutting in Minneapolis. Pool table, the game on, parking out front, and nobody rushing you out of the chair.</p>
+      <div class="principles">
+        <div class="pr"><span class="k">01</span><h3>Same barber every time</h3><p>You book a person, not the next open chair.</p></div>
+        <div class="pr"><span class="k">02</span><h3>Straight-razor finish</h3><p>Straight-razor edges on Dutch's cuts. Shear work, a straight-edge finish and a hot towel on every one of Rod's.</p></div>
+        <div class="pr"><span class="k">03</span><h3>Good with kids</h3><p>Brian takes kids and toddlers. Rod is patient with first haircuts and nervous teens.</p></div>
+        <div class="pr"><span class="k">04</span><h3>No rush</h3><p>Reviewers call it chill and professional. You leave when the cut is right.</p></div>
+      </div>
+    </div>
+    <div class="shop-pics">
+      <div class="a"><img src="img/room.jpg" alt="The chairs under the hexagon lights at Dutch Cuts" loading="lazy"></div>
+      <div><img src="img/lounge.jpg" alt="The lounge with a pool table and TVs" loading="lazy"></div>
+      <div><img src="img/hero.jpg" alt="A barber at work at the mirror" loading="lazy" style="object-position:60% 40%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec coal" id="reviews">
+  <div class="wrap">
+    <div class="rbig">
+      <strong>4.99</strong>
+      <div><span class="eyebrow">Client reviews</span><h2 class="h3" style="margin-top:12px">From 564 reviews on Booksy.<br>5.0 on Google.</h2></div>
+    </div>
+    <div class="reviews">
+      <article class="rcard"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>I've been going to Dutch for well over a year now and the haircuts are always the best.</blockquote><div class="who"><img src="img/dutch-claybaugh.jpg" alt=""><div><b>Ruairi</b><span>Booksy · for Dutch · Sept 2026</span></div></div></article>
+      <article class="rcard"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>Brian is phenomenal. Always gives a good cut and is a pleasure to talk to.</blockquote><div class="who"><img src="img/brian-meyer.jpg" alt=""><div><b>Booksy client</b><span>Booksy · for Brian · Aug 2026</span></div></div></article>
+      <article class="rcard"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>Highly recommend Rod! He did my son's first haircut ever. Dutch was also very welcoming.</blockquote><div class="who"><img src="img/eric-rodriguez.jpg" alt=""><div><b>Booksy client</b><span>Booksy · for Rod · Aug 2026</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT + FAQ -->
+<section class="sec light" id="visit">
+  <div class="wrap visit">
+    <div>
+      <span class="eyebrow">Visit</span>
+      <h2 class="addr">2816 Bee Rd,<br>Savannah, GA 31404</h2>
+      <div class="copyline"><span>Call <b>912-508-6202</b></span><span>Parking on site</span><span>Cards accepted</span></div>
+      <div class="vrow">
+        <a class="btn ink" href="https://www.google.com/maps/dir/?api=1&destination=2816%20Bee%20Rd%2C%20Savannah%2C%20GA%2031404" target="_blank" rel="noopener">Get directions <svg class="ar"><use href="#ne"/></svg></a>
+        <a class="btn line" href="tel:+19125086202">Call the shop</a>
+      </div>
+      <div class="hours" id="hours" aria-label="Hours by barber"></div>
+    </div>
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h3" style="margin-top:18px">Good to know.</h2>
+      <div class="faq" id="faq"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <img src="img/room.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <img class="mark" src="img/mark-paper.png" alt="" width="54" height="82">
+    <h2 class="h2">Due for<br><span class="gold">a cut?</span></h2>
+    <p>Pick your barber and grab a time on Booksy.</p>
+    <button class="btn" type="button" data-book>Book your barber <svg class="ar"><use href="#ar"/></svg></button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="brand"><img src="img/lockup-h-paper.png" alt="Dutch Cuts" width="139" height="26"><p>A barbershop on Bee Road in Savannah. Cuts, beards, kids and house calls.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#barbers">Barbers</a></li><li><a href="#work">The work</a></li><li><a href="#shop">The shop</a></li><li><a href="#visit">Visit</a></li></ul></div>
+      <div><h4>Visit</h4><address>2816 Bee Rd<br>Savannah, GA 31404<br>912-508-6202</address></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/dutchcuts/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/dutchcuts/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@dutchcuts" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://booksy.com/en-us/1356030_dutch-cuts-barbershop_barber-shop_16218_savannah" target="_blank" rel="noopener">Booksy</a></li></ul></div>
+    </div>
+    <div class="giant" aria-hidden="true">Dutch Cuts</div>
+    <div class="legal"><span>© 2026 Dutch Cuts LLC</span><span>Prices and hours as of Oct 2026. Live details on Booksy.</span></div>
+  </div>
+</footer>
+
+<!-- dialogs -->
+<dialog id="chooser" aria-labelledby="ch-t">
+  <div class="in">
+    <div class="dtop"><div><h3 id="ch-t">Pick your barber</h3><p>Opens his Booksy page with live times.</p></div><button class="x" type="button" data-close aria-label="Close"><svg width="14" height="14"><use href="#xx"/></svg></button></div>
+    <div class="pick" id="pick"></div>
+  </div>
+</dialog>
+<dialog id="mnav" aria-label="Menu">
+  <div class="in">
+    <div class="dtop"><img src="img/lockup-h-paper.png" alt="Dutch Cuts"><button class="x" type="button" data-close aria-label="Close menu"><svg width="14" height="14"><use href="#xx"/></svg></button></div>
+    <ul>
+      <li><a href="#barbers">Barbers <svg width="18" height="18"><use href="#ar"/></svg></a></li>
+      <li><a href="#work">The work <svg width="18" height="18"><use href="#ar"/></svg></a></li>
+      <li><a href="#shop">The shop <svg width="18" height="18"><use href="#ar"/></svg></a></li>
+      <li><a href="#visit">Visit <svg width="18" height="18"><use href="#ar"/></svg></a></li>
+    </ul>
+    <div class="foot"><button class="btn" type="button" data-book>Book your barber</button><span>2816 Bee Rd, Savannah, GA 31404 · 912-508-6202</span></div>
+  </div>
+</dialog>
+<dialog id="lb" aria-label="Cut photo">
+  <img id="lb-img" src="img/w01.jpg" alt="">
+  <div class="cap"><b id="lb-cap"></b><button class="x" type="button" data-close aria-label="Close photo"><svg width="14" height="14"><use href="#xx"/></svg></button></div>
+</dialog>
+
+<script>
+(() => {
+  const B = [
+    { slug: "dutch", no: "01", name: "Dutch", full: "Dutch Claybaugh", aka: "Dutch Francisco on Booksy", pos: "Owner", img: "img/dutch-claybaugh.jpg",
+      text: "Modern fades and blends, precision work and athletes. Straight-razor finish on every cut. From Hawaii, cut in Minneapolis, in Savannah since 2022.",
+      rating: "4.99", reviews: 382, from: 65, url: "https://booksy.com/en-us/435085_dutch-francisco-dutch-cuts_barber-shop_16218_savannah",
+      hours: { 1: [10, 18], 2: [10, 19], 3: [10, 19], 4: [8, 18], 5: [8, 18] } },
+    { slug: "brian", no: "02", name: "Brian", full: "Brian Meyer", aka: "Brian Blends on Booksy", pos: "Barber", img: "img/brian-meyer.jpg",
+      text: "Clean fades and longer-hair cuts, beard sculpting and eyebrows. Kids and toddlers welcome. One-on-one, never rushed.",
+      rating: "4.99", reviews: 144, from: 40, url: "https://booksy.com/en-us/1525088_brian-blends-dutch-cuts_barber-shop_16218_savannah",
+      hours: { 1: [10, 18], 2: [11, 20], 3: [10, 18], 4: [11, 20], 5: [10, 18], 6: [10, 15] } },
+    { slug: "rod", no: "03", name: "Rod", full: "Eric Rodriguez", aka: "Rod Fayde on Booksy", pos: "Sundays", img: "img/eric-rodriguez.jpg",
+      text: "Fades and blends with shear work, a straight-edge finish and a hot towel on every cut. Patient with first haircuts. The only chair open Sundays.",
+      rating: "5.0", reviews: 38, from: 40, url: "https://booksy.com/en-us/1356027_rod-fayde-dutch-cuts_barber-shop_16218_savannah",
+      hours: { 0: [9, 16], 1: [9, 16.5], 2: [9, 16.5], 3: [9, 16.5], 4: [9, 16.5], 5: [9, 17.5], 6: [9, 17.5] } },
+  ];
+  const by = Object.fromEntries(B.map(b => [b.slug, b]));
+  const ar = '<svg class="ar"><use href="#ar"/></svg>', ne = '<svg width="14" height="14" aria-hidden="true"><use href="#ne"/></svg>';
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  /* Savannah time, so "open now" is right wherever the viewer is */
+  function nowET() {
+    try {
+      const parts = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", hour: "numeric", minute: "numeric", hour12: false }).formatToParts(new Date());
+      const g = t => parts.find(p => p.type === t).value;
+      const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(g("weekday"));
+      return { day, t: (+g("hour") % 24) + (+g("minute")) / 60 };
+    } catch (e) { const d = new Date(); return { day: d.getDay(), t: d.getHours() + d.getMinutes() / 60 }; }
+  }
+  const fmt = h => { const hr = Math.floor(h), m = Math.round((h - hr) * 60), hh = ((hr + 11) % 12) + 1; return hh + (m ? ":" + String(m).padStart(2, "0") : "") + (hr < 12 ? "am" : "pm"); };
+  const fmtShort = h => { const hr = Math.floor(h), m = Math.round((h - hr) * 60), hh = ((hr + 11) % 12) + 1; return hh + (m ? ":" + String(m).padStart(2, "0") : ""); };
+  const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  function status(b) {
+    const { day, t } = nowET(), h = b.hours[day];
+    if (h && t >= h[0] && t < h[1]) return { open: true, text: `In the chair now · until ${fmt(h[1])}` };
+    if (h && t < h[0]) return { open: false, text: `Opens today at ${fmt(h[0])}` };
+    for (let i = 1; i <= 7; i++) { const d = (day + i) % 7; if (b.hours[d]) return { open: false, text: `Back ${i === 1 ? "tomorrow" : DAYS[d]} at ${fmt(b.hours[d][0])}` }; }
+    return { open: false, text: "See Booksy for hours" };
+  }
+
+  /* ticker */
+  const words = ["Skin fades", "Tapers", "Beard sculpting", "Sharp line-ups", "Designs", "Kids cuts", "Hot towel finish", "House calls"];
+  const run = words.map(w => `<span>${w}<i></i></span>`).join("");
+  document.getElementById("tick").innerHTML = run + run;
+
+  /* "In the shop today" panel (Savannah time) */
+  const todayList = document.getElementById("today-list");
+  function drawToday() {
+    const { day } = nowET();
+    document.getElementById("today-day").textContent = DAYS[day];
+    todayList.innerHTML = B.map(b => { const s = status(b), h = b.hours[day];
+      const line = s.open ? s.text : (h ? s.text : `Off today · ${s.text.replace(/^Back /, "back ")}`);
+      return `<a href="${b.url}" target="_blank" rel="noopener"><img src="${b.img}" alt=""><div><strong>${b.name}</strong><span class="st${s.open ? " open" : ""}"><i></i>${line}</span></div><span class="go">Book ${ne}</span></a>`; }).join("");
+  }
+  drawToday(); setInterval(drawToday, 60000);
+
+  const MENU = {
+    dutch: [["Adult haircut", "Fade or taper, straight-edge finish", 65, "60 min"], ["Haircut and beard", "", 75, "60 min"], ["Haircut with design", "Freestyle or bring a reference", 60, "60 min", 1], ["Beard only", "", 40, "30 min"], ["Kids cut, 12 and under", "Existing clients only", 50, "30 min"], ["House call", "Within 15 miles", 250, "3 hr", 1]],
+    brian: [["The Go-To adult cut", "", 40, "45 min"], ["The Full Package", "Cut plus beard", 50, "60 min"], ["Beard sculpting", "", 20, "15 min"], ["Sharp line-up", "", 20, "15 min"], ["Kid's cut, 12 and under", "Toddlers welcome", 30, "30 min"], ["Eyebrow shape or slit", "", 5, "5 min"], ["Shampoo rinse", "", 10, "10 min"], ["House call cut", "", 200, "2 hr"]],
+    rod: [["Haircut", "Shear work, straight edge, hot towel", 40, "40 min"], ["Haircut and beard", "Full head and face", 50, "55 min"], ["Beard only", "", 25, "25 min"], ["Line-up only", "", 25, "30 min"], ["Kids haircut, ages 2 to 11", "", 30, "30 min"], ["House call", "Within 15 miles, priced per person", 125, "90 min", 1]],
+  };
+  const POLICY = {
+    dutch: "Late cancellations are charged full price. 15 minutes late means no cut, so text to reschedule.",
+    brian: "Card holds the spot. Cash or card at the chair.",
+    rod: "Late cancellations carry the fee in his Booksy policy.",
+  };
+  const openP = new Set();
+  const plist = b => { const m = MENU[b.slug], lo = Math.min(...m.map(x => x[2])), o = openP.has(b.slug);
+    return `<div class="pdrop${o ? " open" : ""}"><button class="ptog" type="button" data-p="${b.slug}" aria-expanded="${o}" aria-controls="pl-${b.slug}"><span><b>${o ? "Hide" : "See"} ${b.name}'s prices</b><small>${m.length} services · cuts from $${b.from}</small></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <div class="pbody" id="pl-${b.slug}"><div><div class="plist">${m.map(([n, d, p, t, f]) => `<div class="prow"><b>${n}</b>${d ? `<small>${d}</small>` : ""}<span class="amt">${f ? '<span class="fr">from</span>' : ""}$${p}<em>${t}</em></span></div>`).join("")}</div><p class="policy">${POLICY[b.slug]}</p></div></div></div>`; };
+  const WORKPREV = { dutch: [7, ["w01", "w06", "w04"]], brian: [7, ["w12", "w08", "w13"]], rod: [6, ["w20", "w17", "w15"]] };
+  /* roster */
+  const roster = document.getElementById("roster");
+  function drawRoster() {
+    roster.innerHTML = B.map(b => { const s = status(b); return `
+      <article class="card">
+        <div class="pic"><img src="${b.img}" alt="${b.full}" loading="lazy"><span class="pos">${b.pos}</span><span class="no" aria-hidden="true">${b.no}</span></div>
+        <div class="body">
+          <h3>${b.name}</h3><div class="aka">${b.aka}</div>
+          <p>${b.text}</p>
+          <div class="stats"><div><strong>${b.rating}</strong><span>Rating</span></div><div><strong>${b.reviews}</strong><span>Reviews</span></div><div><strong>$${b.from}</strong><span>Cuts from</span></div></div>
+          <div class="status${s.open ? " open" : ""}"><i></i>${s.text}</div>
+          ${plist(b)}
+          <a class="wlink" href="#work" data-work="${b.slug}"><span class="th">${WORKPREV[b.slug][1].map((id, i) => `<img src="img/${id}.jpg" alt="" style="--r:${[-4, 2, 5][i]}deg">`).join("")}</span><span><b>See all of ${b.name}'s work</b><span class="n">${WORKPREV[b.slug][0]} cuts in the gallery</span></span><svg class="go" width="16" height="16" aria-hidden="true"><use href="#ar"/></svg></a>
+          <div class="cta"><a class="btn" href="${b.url}" target="_blank" rel="noopener">Book with ${b.name} ${ne}</a></div>
+        </div>
+      </article>`; }).join("");
+  }
+  drawRoster(); setInterval(drawRoster, 60000);
+
+  /* polaroids */
+  const W = [
+    ["w01", "Clean skin fade", "dutch"], ["w09", "High skin fade", "brian"], ["w20", "Drop fade on curls", "rod"], ["w06", "Fade with a freestyle design", "dutch"],
+    ["w12", "Textured flow, low fade", "brian"], ["w17", "Skin fade and beard", "rod"], ["w04", "Box fade, sharp line-up", "dutch"], ["w10", "Side part, long beard", "brian"],
+    ["w15", "Low fade with waves", "rod"], ["w03", "Curly top, hard part, design", "dutch"], ["w13", "Mullet with a taper", "brian"], ["w19", "Mid fade on curly hair", "rod"],
+    ["w02", "High fade, beard line-up", "dutch"], ["w08", "Skin fade, full beard", "brian"], ["w16", "Taper fade with line-up", "rod"], ["w05", "Mid fade, textured top", "dutch"],
+    ["w11", "Taper with beard", "brian"], ["w18", "Longer top with beard", "rod"], ["w07", "Kids cut with design", "dutch"], ["w14", "Kids cut", "brian"],
+  ];
+  const rot = [-2.4, 1.6, -1, 2.2, 1.2, -2, 2.6, -1.4, -0.8, 1.8, -2.6, 1];
+  const board = document.getElementById("board");
+  board.innerHTML = W.map(([id, cap, s], i) => `<button class="pol${i >= 12 ? " extra" : ""}" type="button" data-b="${s}" data-i="${i}" style="--r:${rot[i % rot.length]}deg;--y:${i % 2 ? 14 : 0}px" aria-label="${esc(cap)} by ${by[s].name}, view larger"><div class="ph"><img src="img/${id}.jpg" alt="" loading="lazy"></div><span class="cap"><b>${cap}</b><span>${by[s].name}</span></span></button>`).join("");
+  const filters = document.getElementById("filters");
+  filters.innerHTML = [["all", "All 20"], ...B.map(b => [b.slug, `${b.name}'s work`])].map(([k, l], i) => `<button type="button" data-k="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
+  const moreBtn = document.getElementById("more");
+  const expand = () => { board.classList.remove("short"); moreBtn.parentElement.hidden = true; };
+  moreBtn.onclick = expand;
+  filters.addEventListener("click", e => { const t = e.target.closest("button"); if (!t) return; if (t.dataset.k !== "all") expand(); filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === t)); board.querySelectorAll(".pol").forEach(p => p.hidden = t.dataset.k !== "all" && p.dataset.b !== t.dataset.k); });
+  const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+  board.addEventListener("click", e => { const p = e.target.closest(".pol"); if (!p) return; const [id, cap, s] = W[+p.dataset.i]; lbImg.src = `img/${id}.jpg`; lbImg.alt = `${cap} by ${by[s].name}`; lbCap.textContent = `${cap} · ${by[s].name}`; lb.showModal(); });
+  lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+
+  /* card -> that barber's work in the gallery */
+  roster.addEventListener("click", e => {
+    const t = e.target.closest(".ptog"); if (!t) return;
+    const d = t.parentElement, slug = t.dataset.p, o = !d.classList.contains("open");
+    d.classList.toggle("open", o); t.setAttribute("aria-expanded", o);
+    o ? openP.add(slug) : openP.delete(slug);
+    t.querySelector("b").textContent = `${o ? "Hide" : "See"} ${by[slug].name}'s prices`;
+  });
+  roster.addEventListener("click", e => {
+    const l = e.target.closest("[data-work]"); if (!l) return;
+    e.preventDefault();
+    const btn = filters.querySelector(`[data-k="${l.dataset.work}"]`); if (btn) btn.click();
+    document.getElementById("work").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+
+  /* hours, today highlighted (Savannah time) */
+  const today = nowET().day;
+  document.getElementById("hours").innerHTML = `<div class="hr head"><span>Day</span>${B.map(b => `<span>${b.name}</span>`).join("")}</div>` +
+    [1, 2, 3, 4, 5, 6, 0].map(d => `<div class="hr${d === today ? " today" : ""}"><span>${DAYS[d].slice(0, 3)}</span>${B.map(b => b.hours[d] ? `<span>${fmtShort(b.hours[d][0])}–${fmtShort(b.hours[d][1])}</span>` : `<span class="off">Off</span>`).join("")}</div>`).join("");
+
+  /* FAQ */
+  const FAQ = [
+    ["How do I book?", "Tap Book your barber, pick Dutch, Brian or Rod, and choose a live time on his Booksy page. Each barber keeps his own book."],
+    ["Who's open on Sundays?", "Rod, from 9am to 4pm. Dutch works Monday to Friday. Brian works Monday to Saturday."],
+    ["Do you cut kids?", "Yes. Brian cuts kids 12 and under, toddlers included. Rod cuts ages 2 to 11 and is patient with first haircuts. Dutch takes kids who are already his clients."],
+    ["Do you do house calls?", "All three barbers do. House calls start at $125 with Rod, $200 with Brian and $250 with Dutch. Dutch and Rod travel within 15 miles."],
+    ["What if I'm late or need to cancel?", "Each barber sets his own policy on Booksy. With Dutch, last-minute cancellations are charged full price and arriving 15 minutes late means the cut can't happen, so text to reschedule. Brian and Rod charge a late-cancellation fee."],
+    ["Where do I park, and how do I pay?", "Parking is on site at 2816 Bee Rd. Cards are accepted, and Brian also takes cash."],
+  ];
+  const faq = document.getElementById("faq");
+  faq.innerHTML = FAQ.map(([q, a], i) => `<div class="q${i === 0 ? " open" : ""}"><button type="button" aria-expanded="${i === 0}" aria-controls="fa-${i}">${q}<span class="pm" aria-hidden="true"><svg width="14" height="14"><use href="#plus"/></svg></span></button><div class="a" id="fa-${i}"><div><p>${a}</p></div></div></div>`).join("");
+  faq.querySelectorAll(".q > button").forEach(btn => btn.addEventListener("click", () => { const q = btn.parentElement, o = !q.classList.contains("open"); q.classList.toggle("open", o); btn.setAttribute("aria-expanded", o); }));
+
+  /* chooser + menu */
+  document.getElementById("pick").innerHTML = B.map(b => { const s = status(b); return `<a href="${b.url}" target="_blank" rel="noopener"><img src="${b.img}" alt=""><div><strong>${b.name}</strong><span>${s.text}</span></div><div class="p"><b>$${b.from}</b>cuts from</div></a>`; }).join("");
+  const chooser = document.getElementById("chooser"), mnav = document.getElementById("mnav");
+  document.getElementById("menu-open").onclick = () => mnav.showModal();
+  mnav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mnav.close()));
+  document.addEventListener("click", e => {
+    if (e.target.closest("[data-book]")) { if (mnav.open) mnav.close(); chooser.showModal(); }
+    const c = e.target.closest("[data-close]"); if (c) c.closest("dialog").close();
+  });
+  chooser.addEventListener("click", e => { if (e.target === chooser) chooser.close(); });
+  chooser.querySelectorAll("a").forEach(a => a.addEventListener("click", () => chooser.close()));
+})();
+</script>
+
+</body>
+</html>
